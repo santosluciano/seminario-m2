@@ -55,7 +55,14 @@ class InstallData implements InstallDataInterface
         $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
 
         $customerSetup->addAttribute(Customer::ENTITY, 'enable_customer_credit', [
-            // características del atributo
+            'type'         => 'int',
+            'label'        => 'Enable Customer Credit',
+            'input'        => 'boolean',
+            'required'     => false,
+            'visible'      => true,
+            'user_defined' => true,
+            'position'     => 210,
+            'system'       => 0
         ]);
 
         $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'enable_customer_credit')
