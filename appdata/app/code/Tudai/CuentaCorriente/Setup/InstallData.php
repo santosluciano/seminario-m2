@@ -41,6 +41,17 @@ class InstallData implements InstallDataInterface
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
+        /**
+         * @var CustomerSetup $customerSetup
+         */
+        $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
+        $customerEntity = $customerSetup->getEavConfig()->getEntityType(Customer::ENTITY);
+        $attributeSetId = $customerEntity->getDefaultAttributeSetId();
 
+        /**
+         * @var $attributeSet AttributeSet
+         */
+        $attributeSet = $this->attributeSetFactory->create();
+        $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
     }
 }
