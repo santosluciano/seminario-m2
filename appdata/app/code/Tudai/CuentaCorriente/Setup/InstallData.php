@@ -53,5 +53,18 @@ class InstallData implements InstallDataInterface
          */
         $attributeSet = $this->attributeSetFactory->create();
         $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
+
+        $customerSetup->addAttribute(Customer::ENTITY, 'enable_customer_credit', [
+            // características del atributo
+        ]);
+
+        $attribute = $customerSetup->getEavConfig()->getAttribute(Customer::ENTITY, 'enable_customer_credit')
+            ->addData([
+                'attribute_set_id'   => $attributeSetId,
+                'attribute_group_id' => $attributeGroupId,
+                'used_in_forms'      => ['adminhtml_customer'],//you can use other forms also ['adminhtml_customer_address', 'customer_address_edit', 'customer_register_address']
+            ]);
+
+        $attribute->save();
     }
 }
