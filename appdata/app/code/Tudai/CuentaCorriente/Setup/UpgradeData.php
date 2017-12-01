@@ -38,12 +38,8 @@ class UpgradeData implements UpgradeDataInterface
             && version_compare($context->getVersion(), '1.1.0') < 0
         ) {
             $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
-       /**
-     * @param \Magento\Catalog\Setup\CategorySetup $categorySetup
-     * @return void
-     */     $customerEntity = $customerSetup->getEavConfig()->getEntityType(Customer::ENTITY);
+            $customerEntity = $customerSetup->getEavConfig()->getEntityType(Customer::ENTITY);
             $attributeSetId = $customerEntity->getDefaultAttributeSetId();
-    
             $attributeSet = $this->attributeSetFactory->create();
             $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
     
