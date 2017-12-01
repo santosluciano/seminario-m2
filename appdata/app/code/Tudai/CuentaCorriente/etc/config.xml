@@ -2,12 +2,12 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <credit_account>
+            <customer_credit>
                 <active>1</active>
-                <model>Tudai\CuentaCorriente\Model\CreditAccount</model>
+                <model>Tudai\CuentaCorriente\Model\CustomerCredit</model>
                 <title>Cuenta Corriente</title>
-                <group>offline</group>
-            </credit_account>
+                <group>tudai-payment</group>
+            </customer_credit>
         </payment>
     </default>
 </config>
