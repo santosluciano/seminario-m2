@@ -1,6 +1,10 @@
 {
     "name": "Tudai/CuentaCorriente",
+<<<<<<< HEAD
     "description": "Tudai - Seminario Magento 2",
+=======
+    "description": "TUDAI - Seminario Magento 2",
+>>>>>>> clase_4_completo
     "require": {
         "php": "~5.6.5|7.0.2|7.0.4|~7.0.6"
     },

@@ -1,11 +1,21 @@
 <?xml version="1.0"?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> clase_4_completo
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
             <customer_credit>
                 <active>1</active>
+<<<<<<< HEAD
                 <title>Cuenta Corriente</title>
+=======
+                <model>Tudai\CuentaCorriente\Model\CustomerCredit</model>
+                <title>Cuenta Corriente</title>
+                <limit>1000</limit>
+                <group>tudai-payment</group>
+>>>>>>> clase_4_completo
             </customer_credit>
         </payment>
     </default>
