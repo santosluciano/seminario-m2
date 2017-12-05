@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 namespace Tudai\CuentaCorriente\Observer;
 use \Magento\Framework\Event\ObserverInterface;
@@ -7,7 +6,7 @@ use \Magento\Framework\Event\ObserverInterface;
 class AdminhtmlCustomerSaveAfter implements ObserverInterface
 {
     protected $logger;
-=======
+
 /**
  * Class AdminhtmlCustomerSaveAfter
  *
@@ -28,7 +27,7 @@ class AdminhtmlCustomerSaveAfter
     protected $logger;
 
     /** @var \Magento\Backend\Model\Auth\Session  */
->>>>>>> clase_4_completo
+
     protected $adminSession;
 
     public function __construct(
@@ -39,19 +38,6 @@ class AdminhtmlCustomerSaveAfter
         $this->logger = $logger;
         $this->adminSession = $adminSession;
     }
-<<<<<<< HEAD
-    public function execute(\Magento\Framework\Event\Observer $observer)
-    {
-        $customer = $observer->getData('customer');
-        
-        $customerName = $customer->getFirstname().' '.$customer->getLastname();
-        $value = $customer->getCustomAttribute('enable_customer_credit')->getValue();
-        
-        $adminUser = $this->adminSession->getUser()->getName();
-        
-        $this->logger->info(sprintf("OBSERVER -- %s Guardado con Valor %s por el administrador %s", $customerName, $value, $adminUser));
-    }
-=======
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
@@ -65,5 +51,18 @@ class AdminhtmlCustomerSaveAfter
         $this->logger->info(sprintf("OBSERVER -- %s Guardado con Valor %s por el administrador %s", $customerName, $value, $adminUser));
     }
 
->>>>>>> clase_4_completo
+
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $customer = $observer->getData('customer');
+
+        $customerName = $customer->getFirstname().' '.$customer->getLastname();
+        $value = $customer->getCustomAttribute('enable_customer_credit')->getValue();
+
+        $adminUser = $this->adminSession->getUser()->getName();
+
+        $this->logger->info(sprintf("OBSERVER -- %s Guardado con Valor %s por el administrador %s", $customerName, $value, $adminUser));
+    }
+
+
 }

@@ -10,10 +10,10 @@ use Magento\Customer\Model\Customer;
 use Magento\Eav\Model\Entity\Attribute\Set as AttributeSet;
 use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
 
-<<<<<<< HEAD
+
 class InstallData implements InstallDataInterface
 {
-=======
+
 
 class InstallData implements InstallDataInterface
 {
@@ -32,18 +32,18 @@ class InstallData implements InstallDataInterface
      * @param CustomerSetupFactory $customerSetupFactory
      * @param AttributeSetFactory $attributeSetFactory
      */
->>>>>>> clase_4_completo
+
     public function __construct(
         CustomerSetupFactory $customerSetupFactory,
         AttributeSetFactory $attributeSetFactory
     ) {
-<<<<<<< HEAD
+
     }
-       
+
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
 
-=======
+
         $this->customerSetupFactory = $customerSetupFactory;
         $this->attributeSetFactory = $attributeSetFactory;
     }
@@ -85,6 +85,6 @@ class InstallData implements InstallDataInterface
             ]);
 
         $attribute->save();
->>>>>>> clase_4_completo
+
     }
 }
